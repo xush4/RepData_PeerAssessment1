@@ -115,9 +115,13 @@ Not surprisingly adding in these imputed values increases both the mean and the 
 We'd like to find out if there are any differences between weekday and weekend activity. So, we're going to add a factor variable to our data set with the filled-in missing values for weekends and weekdays.
 
 First, let's just get the days of the week out of the date column:
-```{r}
+```{r,results='hide'}
+Sys.setlocale("LC_TIME", "English")
 days<-weekdays(as.Date(data2$date))
 ```
+My working language is not English, 
+so I need to set language for system-date here to English.
+
 
 Now let's divide that into weekends and not:
 ```{r}
